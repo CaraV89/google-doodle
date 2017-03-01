@@ -2,12 +2,43 @@
 @import 'google-homepage';
 
 body {
-    background: #3fe0d4;
+    background: white;
 }
 
 // First Frame
 
-img#line {
+img#shutter {
+    transform: scale(.5);
+    transition: transform .5s;
+}
+
+img#camera {
+    transform: scale(.5);
+    transition: transform .5s;
+}
+
+img#film {
+    transform: scale(.5);
+    transition: transform .5s;
+}
+
+img#oscar {
+    position: absolute;
+    top: 75px;
+    right: 500px;
+    transform: scale(.5);
+    transition: transform .5s;
+}
+
+img#letter {
+    position: absolute;
+    top: 75px;
+    transform: scale(.5);
+    transition: transform .5s;
+}
+
+img#logo {
+    position: absolute;
     transform: scale(.5);
     transition: transform .5s;
 }
