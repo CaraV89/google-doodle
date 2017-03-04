@@ -1,50 +1,169 @@
+// Outside Source Animation.css
 // Grand Central Station
 @import 'google-homepage';
 
-body {
-    background: white;
-}
 
 // First Frame
 
+img#shutter,
+img#camera,
+img#film,
+img#oscar,
+img#letter {
+    position:center;
+    height: 100px;
+    padding-right: 5px;
+    padding-left: 3px;
+    padding-top: 30px;
+    padding-bottom: 0px;
+}
+
 img#shutter {
-    transform: scale(.5);
-    transition: transform .5s;
+    padding-right: 15px;
+    animation: flipInX 3s;
 }
 
 img#camera {
-    transform: scale(.5);
-    transition: transform .5s;
+    padding-right: 15px;
+    width: 75px;
+    animation: flipInX 5s;
 }
 
 img#film {
-    transform: scale(.5);
-    transition: transform .5s;
+    animation: flipInX 7s;
 }
 
 img#oscar {
-    position: absolute;
-    top: 75px;
-    right: 500px;
-    transform: scale(.5);
-    transition: transform .5s;
+    padding-right: 15px;
+    animation: flipInX 9s;
 }
 
 img#letter {
-    position: absolute;
-    top: 75px;
-    transform: scale(.5);
-    transition: transform .5s;
+    heigth: 95px;
+    width: 70px;
+    animation: flipInX 11s;
 }
 
 img#logo {
-    position: absolute;
-    transform: scale(.5);
-    transition: transform .5s;
+    height: 80px;
+    width: 460px;
+    position: center;
+    padding-top: 15px;
+    padding-bottom: -200px;
+    animation: fadeIn 15s;
 }
 
-// Last Frame
-img#line:hover {
-    transform: scale(1.5)
-    
+//  Keyframe Animation
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+
+@-webkit-keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+@keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+  animation-name: flipInX;
 }
